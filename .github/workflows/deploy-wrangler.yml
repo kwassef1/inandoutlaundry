@@ -1,0 +1,35 @@
+name: Deploy with Wrangler (Pages)
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 'lts/*'
+
+      - name: Install dependencies and build
+        working-directory: ./client
+        run: |
+          npm ci
+          npm run build
+
+      - name: Install wrangler
+        run: |
+          npm install -g wrangler
+
+      - name: Publish to Cloudflare Pages via wrangler
+        env:
+          CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+          CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
+        run: |
+          # publish static build directory to Pages using wrangler
+          npx wrangler pages publish ./client/build --project-name "$PROJECT_NAME" --branch main

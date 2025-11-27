@@ -1,0 +1,7 @@
+name = "inandoutlaundry-pages"
+type = "webpack"
+account_id = "REPLACE_WITH_ACCOUNT_ID"
+compatibility_date = "2025-11-25"
+
+# For Pages publish via wrangler, set project name if desired
+project_name = "inandoutlaundry"

@@ -28,8 +28,10 @@ jobs:
 
       - name: Publish to Cloudflare Pages via wrangler
         env:
-          CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
-          CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
+          # map repository secrets to the env names wrangler expects
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
+          PROJECT_NAME: inandoutlaundry
         run: |
-          # publish static build directory to Pages using wrangler
-          npx wrangler pages publish ./client/build --project-name "$PROJECT_NAME" --branch main
+          # Use the new `pages deploy` command (publish is deprecated)
+          npx wrangler pages deploy ./client/build --project-name "$PROJECT_NAME" --branch main

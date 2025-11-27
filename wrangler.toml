@@ -5,3 +5,4 @@ compatibility_date = "2025-11-25"
 
 # For Pages publish via wrangler, set project name if desired
 project_name = "inandoutlaundry"
+pages_build_output_dir = "client/build"

@@ -1,6 +1,6 @@
 {
 	"main": "dist/_worker.js/index.js",
-	"name": "",
+	"name": "inandoutlaundry",
   "compatibility_date": "2025-11-28",
   "compatibility_flags": [
     "nodejs_compat",

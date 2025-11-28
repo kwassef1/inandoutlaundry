@@ -1,0 +1,283 @@
+---
+---
+    
+
+
+<div class="container">
+    <div class="header">
+        <div class="hero-content">
+			<h1>Welcome to <pre>In & Out Laundry</pre></h1>
+			<p>Your modern laundromat in Newark, NJ</p>
+		</div>
+        <div class="promo-header">
+            <div class="logo">WASH & FOLD</div>
+            <div class="subtitle">SERVICIO DE LAVADO Y DOBLADO</div>
+            <div class="tagline">GREAT VALUE! | ¡GRAN VALOR!</div>
+        </div>
+    </div>
+
+    <div class="banner">
+        <div class="banner-text">Same-day turnaround & delivery available</div>
+        <div class="banner-text-es">Disponible el mismo día y con entrega a domicilio</div>
+    </div>
+
+    <div class="content">
+        <div class="image-section">
+            <svg class="worker-image" viewBox="0 0 400 500" xmlns="http://www.w3.org/2000/svg">
+                <!-- Simplified illustration placeholder -->
+                <rect width="400" height="500" fill="#E8F7FC"/>
+                <text x="200" y="250" text-anchor="middle" font-size="24" fill="#666">
+                    [Worker with laundry basket image]
+                </text>
+            </svg>
+        </div>
+
+        <div class="promo-section">
+            <div class="decorative-circles">
+                <div class="circle circle-dark"></div>
+                <div class="circle circle-light"></div>
+            </div>
+            <div class="discount-large">25% OFF</div>
+            <div class="discount-text">YOUR FIRST ORDER!</div>
+            <div class="discount-spanish">¡25% DE DESCUENTO SU PRIMER PEDIDO!</div>
+        </div>
+    </div>
+</div>
+
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Arial', sans-serif;
+        background: white;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .hero-content {
+        width: 100%;
+        overflow: hidden;
+        text-align: left;
+        text-align: flex-start;
+        padding-bottom: 0rem;
+        flex: 1;
+	}
+
+    .promo-header {
+        flex: 1;
+    }
+
+    pre {
+		font-family:
+			ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono',
+			monospace;
+		font-weight: normal;
+		background: linear-gradient(14deg, #33b4d8 0%, #415eff 100%);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-clip: text;
+		margin: 0;
+	}
+
+    .hero-content h1 {
+        font-size: 50px;
+        margin-top: 0.25em;
+    }
+    .hero-content p{
+        color: #4b5563;
+		font-size: 16px;
+		line-height: 24px;
+		letter-spacing: -0.006em;
+		margin: 0;
+	}
+
+    .header {
+        padding: 40px 20px 20px;
+        display: flex;
+        gap: 40px;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: row;
+    }
+
+    .logo {
+        font-size: 72px;
+        font-weight: 600;
+        color: #3EBBF0;
+        letter-spacing: -2px;
+        line-height: 0.9;
+    }
+
+    .subtitle {
+        font-size: 20px;
+        color: #3EBBF0;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-top: 5px;
+    }
+
+    .tagline {
+        font-size: 24px;
+        font-weight: 900;
+        color: #000033;
+        margin-top: 10px;
+        letter-spacing: 1px;
+    }
+
+    .banner {
+        background: #000033;
+        color: white;
+        padding: 30px 20px;
+        margin-top: 30px;
+        position: relative;
+    }
+
+    .banner-text {
+        font-size: 24px;
+        font-weight: 600;
+        max-width: 700px;
+    }
+
+    .banner-text-es {
+        font-size: 20px;
+        font-style: italic;
+        margin-top: 10px;
+        opacity: 0.95;
+    }
+
+    .content {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+        padding: 40px 20px;
+        background: linear-gradient(to right, white 50%, #3EBBF0 50%);
+        position: relative;
+    }
+
+    .image-section {
+        flex: 0 0 400px;
+        position: relative;
+    }
+
+    .worker-image {
+        width: 100%;
+        height: auto;
+    }
+
+    .promo-section {
+        flex: 1;
+        text-align: center;
+        color: white;
+        padding: 40px;
+        margin-left: 150px;
+    }
+
+    .decorative-circles {
+        position: absolute;
+        top: -30px;
+        right: 100px;
+    }
+
+    .circle {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        position: absolute;
+    }
+
+    .circle-dark {
+        background: #000033;
+        top: 0;
+        right: 0;
+    }
+
+    .circle-light {
+        background: #8DD5F5;
+        top: 40px;
+        right: 40px;
+    }
+
+    .discount-large {
+        font-size: 96px;
+        font-weight: 900;
+        line-height: 1;
+        margin-bottom: 10px;
+    }
+
+    .discount-text {
+        font-size: 64px;
+        font-weight: 900;
+        line-height: 1.1;
+        margin-bottom: 20px;
+    }
+
+    .discount-spanish {
+        font-size: 28px;
+        font-weight: 900;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    @media (max-width: 968px) {
+        .content {
+            flex-direction: column;
+            background: #3EBBF0;
+        }
+
+        .image-section {
+            flex: 0 0 auto;
+            max-width: 400px;
+        }
+
+        .logo {
+            font-size: 56px;
+        }
+
+        .discount-large {
+            font-size: 72px;
+        }
+
+        .discount-text {
+            font-size: 48px;
+        }
+    }
+
+    @media (max-width: 640px) {
+        .logo {
+            font-size: 42px;
+        }
+
+        .subtitle {
+            font-size: 16px;
+        }
+
+        .tagline {
+            font-size: 18px;
+        }
+
+        .banner-text {
+            font-size: 20px;
+        }
+
+        .discount-large {
+            font-size: 56px;
+        }
+
+        .discount-text {
+            font-size: 36px;
+        }
+
+        .discount-spanish {
+            font-size: 22px;
+        }
+    }
+</style>

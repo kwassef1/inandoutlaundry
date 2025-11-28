@@ -1,0 +1,100 @@
+---
+/* No props needed */
+---
+
+<footer class="footer">
+  <div class="container footer-inner">
+
+    <div class="footer-section">
+      <h3>In & Out Laundry</h3>
+      <p>Your modern laundromat in Newark, NJ</p>
+    </div>
+
+    <div class="footer-section">
+      <h4>Hours</h4>
+      <p>7:00 AM – 9:00 PM</p>
+      <p>Open Every Day</p>
+    </div>
+
+    <div class="footer-section">
+      <h4>Contact</h4>
+      <p>264 Broadway, Newark, NJ</p>
+      <p>(Entrance on side street)</p>
+      <p>(551) 326-2031</p>
+      <p><a href="mailto:info@inandoutlaundry.com">info@inandoutlaundry.com</a></p>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>© {new Date().getFullYear()} In & Out Laundry. All rights reserved.</p>
+  </div>
+</footer>
+
+<style>
+
+/* Footer Background — matching header brightness */
+.footer {
+  background: var(--iol-sky);
+  padding: 1rem 0 0.5rem;
+  border-top: 1px solid rgba(0,0,0,0.05);
+}
+
+/* Match header layout: horizontal row with spacing */
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 4rem;
+  padding: 0 0 0.5rem;
+  flex-wrap: wrap; /* Allows wrapping on small screens */
+}
+
+/* Footer section styling */
+.footer-section {
+  min-width: 200px;
+  flex: 1;
+  padding: 0 2rem;
+}
+
+/* Section titles */
+.footer-section h3,
+.footer-section h4 {
+  color: var(--iol-navy);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+/* Paragraph + links */
+.footer-section p,
+.footer-section a {
+  color: var(--iol-navy);
+  font-size: 0.95rem;
+  font-family: var(--iol-font);
+  opacity: 0.85;
+  text-align: center;
+}
+
+
+
+/* Bottom bar */
+.footer-bottom {
+  text-align: center;
+  padding-top: 0.5rem;
+  opacity: 0.8;
+  font-size: 0.85rem;
+  color: var(--iol-navy);
+  border-top: 1px solid rgba(0,0,0,0.05);
+}
+
+/* Mobile adjustments */
+@media (max-width: 600px) {
+  .footer-inner {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5rem;
+  }
+}
+
+</style>

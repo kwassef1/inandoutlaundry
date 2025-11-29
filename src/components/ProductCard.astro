@@ -1,21 +1,21 @@
 ---
 interface Props {
-  image: string;
-  title: string;
-  description?: string;
+    image: string;
+    title: string;
+    description?: string;
 }
 
 const { image, title, description } = Astro.props;
 ---
 
 <div class="product-card">
-  <div class="product-image">
-    <img src={image} alt={title} />
-  </div>
-  <div class="product-content">
-    <h3>{title}</h3>
-    {description && <p>{description}</p>}
-  </div>
+    <div class="product-image">
+        <img src={image} alt={title} />
+    </div>
+    <div class="product-content">
+        <h3>{title}</h3>
+        {description && <p>{description}</p>}
+    </div>
 </div>
 
 <style>

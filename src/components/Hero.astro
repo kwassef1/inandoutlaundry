@@ -1,110 +1,469 @@
 ---
-import hero from '../assets/hero_image.webp';
-import background from '../assets/background.svg';
+import { Image } from "astro:assets";
+import basket from "../assets/laundry_basket.webp";
 ---
 
-<div class="hero-page">
-	<main class="main-content">
-		<section class="hero">
-			<div class="hero-content">
-				<h1>Welcome to <pre>In & Out Laundry</pre></h1>
-				<p>Your modern laundromat in Newark, NJ</p>
-			</div>
-			<img src={hero.src} alt="In & Out Laundry Laundromat Interior" width="1400px"/>
-			
-		</section>
-	</main>
+<div class="container">
+    <div class="header">
+        <div class="hero-content">
+            <h1>Welcome to <pre>In & Out Laundry</pre></h1>
+            <p>Your modern laundromat in Newark, NJ</p>
+        </div>
+        <div class="promo-header">
+            <div class="logo">WASH & FOLD</div>
+            <div class="subtitle">SERVICIO DE LAVADO Y DOBLADO</div>
+            <div class="tagline">GREAT VALUE! | ¡GRAN VALOR!</div>
+        </div>
+    </div>
+
+    <div class="banner">
+        <div class="banner-text">Same-day turnaround & delivery available</div>
+        <div class="banner-text-es">
+            Disponible el mismo día y con entrega a domicilio
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="image-section">
+            <img
+                src={basket.src}
+                alt="Worker with laundry basket"
+                class="worker-image"
+                />
+        </div>
+
+        <div class="promo-section">
+            <div class="decorative-circles">
+                <div class="circle circle-dark"></div>
+                <div class="circle circle-light"></div>
+            </div>
+            <div class="discount-large">25% OFF</div>
+            <div class="discount-text">YOUR FIRST ORDER!</div>
+            <div class="discount-spanish">
+                ¡25% DE DESCUENTO SU PRIMER PEDIDO!
+            </div>
+        </div>
+    </div>
 </div>
 
 <style>
-	.hero-page {
-		font-family: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
-		min-height: 100vh;
-		display: flex;
-		flex-direction: column;
-	}
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
 
-	.main-content {
-		flex: 1;
-		display: flex;
-		justify-content: center;
-		padding: 2rem;
-	}
+    body {
+        font-family: "Arial", sans-serif;
+        background: white;
+    }
 
-	.hero {
-		width: 100%;
-		position: relative;
-		overflow: hidden;
-		max-width: 1400px;
-		border-radius: 16px;
-		overflow: hidden;
-		box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-		text-align: left;
-		text-align: flex-start;
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
 
+    .hero-content {
+        width: 100%;
+        overflow: hidden;
+        text-align: left;
+        text-align: flex-start;
+        padding-bottom: 0rem;
+        flex: 1;
+    }
 
-		height: stretch;
-		display: flex;
-		flex-direction: row;
-		align-items: flex-start;
-	}
+    .promo-header {
+        flex: 1;
+    }
 
+    pre {
+        font-family: ui-monospace, "Cascadia Code", "Source Code Pro", Menlo,
+            Consolas, "DejaVu Sans Mono", monospace;
+        font-weight: normal;
+        background: linear-gradient(14deg, #33b4d8 0%, #415eff 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin: 0;
+    }
 
-	.hero-img {
-		position: absolute;
-		align-items: flex-end;
-		inset: 0;
-		width: 100%;
-		height: auto;
-		object-fit: cover;
-	}
+    .hero-content h1 {
+        font-size: 50px;
+        margin-top: 0.25em;
+    }
+    .hero-content p {
+        color: #4b5563;
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: -0.006em;
+        margin: 0;
+    }
 
-	.hero-content {
-		padding: 2rem;
-		padding-bottom: 0rem;
-		border-radius: 12px;
-	}
+    .header {
+        padding: 40px 20px 20px;
+        display: flex;
+        gap: 40px;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: row;
+    }
 
-	h1 {
-		font-size: 50px;
-		margin-top: 0.25em;
-	}
+    .logo {
+        font-size: 72px;
+        font-weight: 600;
+        color: #3ebbf0;
+        letter-spacing: -2px;
+        line-height: 0.9;
+    }
 
-	pre {
-		font-family:
-			ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono',
-			monospace;
-		font-weight: normal;
-		background: linear-gradient(14deg, #33b4d8 0%, #415eff 100%);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-clip: text;
-		margin: 0;
-	}
+    .subtitle {
+        font-size: 20px;
+        color: #3ebbf0;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-top: 5px;
+    }
 
-	h2 {
-		margin: 0 0 1em;
-		font-weight: normal;
-		color: #111827;
-		font-size: 20px;
-	}
+    .tagline {
+        font-size: 24px;
+        font-weight: 900;
+        color: #000033;
+        margin-top: 10px;
+        letter-spacing: 1px;
+    }
 
-	p {
-		color: #4b5563;
-		font-size: 16px;
-		line-height: 24px;
-		letter-spacing: -0.006em;
-		margin: 0;
-	}
+    .banner {
+        background: #000033;
+        color: white;
+        padding: 30px 20px;
+        margin-top: 30px;
+        position: relative;
+    }
 
-	@media screen and (max-width: 768px) {
-		.hero-content {
-			padding: 1.5rem 1rem;
-		}
+    .banner-text {
+        font-size: 24px;
+        font-weight: 600;
+        max-width: 700px;
+    }
 
-		h1 {
-			font-size: 24px;
-			line-height: 1.3;
-		}
-	}
+    .banner-text-es {
+        font-size: 20px;
+        font-style: italic;
+        margin-top: 10px;
+        opacity: 0.95;
+    }
+
+    .content {
+        display: flex;
+        align-items: center;
+        background: linear-gradient(to right, white 50%, #53c7ff 50%);
+        position: relative;
+    }
+
+    .image-section {
+        flex: 1;
+        position: relative;
+        display: flex;
+    }
+
+    .worker-image {
+        width: 100%;
+        height: auto;
+    }
+
+    .promo-section {
+        flex: 1;
+        text-align: center;
+        color: white;
+    }
+
+    .decorative-circles {
+        position: absolute;
+        top: -30px;
+        right: 100px;
+    }
+
+    .circle {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        position: absolute;
+    }
+
+    .circle-dark {
+        background: #000033;
+        top: 0;
+        right: 0;
+    }
+
+    .circle-light {
+        background: #8dd5f5;
+        top: 40px;
+        right: 40px;
+    }
+
+    .discount-large {
+        font-size: 96px;
+        font-weight: 900;
+        line-height: 1;
+        margin-bottom: 10px;
+    }
+
+    .discount-text {
+        font-size: 64px;
+        font-weight: 900;
+        line-height: 1.1;
+        margin-bottom: 20px;
+    }
+
+    .discount-spanish {
+        font-size: 28px;
+        font-weight: 900;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    @media (max-width: 968px) {
+        .content {
+            flex-direction: column;
+            background: #3ebbf0;
+        }
+
+        .image-section {
+            flex: 0 0 auto;
+            max-width: 400px;
+        }
+
+        .logo {
+            font-size: 56px;
+        }
+
+        .discount-large {
+            font-size: 72px;
+        }
+
+        .discount-text {
+            font-size: 48px;
+        }
+    }
+    @media (max-width: 968px) {
+        .header {
+            flex-direction: column;
+            gap: 30px;
+            align-items: center;
+            padding: 30px 20px 20px;
+        }
+
+        .hero-content {
+            padding-top: 1rem;
+            text-align: center;
+            width: 100%;
+        }
+
+        .hero-content h1 {
+            font-size: 40px;
+        }
+
+        .hero-content p {
+            font-size: 14px;
+        }
+
+        .content {
+            flex-direction: column;
+            background: #3ebbf0;
+            padding: 30px 20px;
+        }
+
+        .image-section {
+            flex: 0 0 auto;
+            max-width: 350px;
+            width: 100%;
+        }
+
+        .promo-section {
+            margin-left: 0;
+            padding: 30px 20px;
+        }
+
+        .logo {
+            font-size: 56px;
+        }
+
+        .subtitle {
+            font-size: 18px;
+        }
+
+        .tagline {
+            font-size: 20px;
+        }
+
+        .banner {
+            padding: 25px 20px;
+        }
+
+        .banner-text {
+            font-size: 20px;
+        }
+
+        .banner-text-es {
+            font-size: 18px;
+        }
+
+        .discount-large {
+            font-size: 72px;
+        }
+
+        .discount-text {
+            font-size: 48px;
+        }
+
+        .discount-spanish {
+            font-size: 24px;
+        }
+
+        .decorative-circles {
+            right: 50px;
+        }
+
+        .circle {
+            width: 60px;
+            height: 60px;
+        }
+    }
+
+    @media (max-width: 640px) {
+        .header {
+            gap: 25px;
+            padding: 20px 15px 15px;
+        }
+
+        .hero-content {
+            padding-top: 1rem;
+            text-align: center;
+        }
+
+        .hero-content h1 {
+            font-size: 32px;
+        }
+
+        .hero-content p {
+            font-size: 13px;
+        }
+
+        .logo {
+            font-size: 42px;
+        }
+
+        .subtitle {
+            font-size: 14px;
+        }
+
+        .tagline {
+            font-size: 16px;
+        }
+
+        .banner {
+            padding: 20px 15px;
+            margin-top: 20px;
+        }
+
+        .banner-text {
+            font-size: 18px;
+        }
+
+        .banner-text-es {
+            font-size: 16px;
+        }
+
+        .content {
+            padding: 25px 15px;
+            gap: 30px;
+        }
+
+        .image-section {
+            max-width: 300px;
+        }
+
+        .promo-section {
+            padding: 20px 15px;
+        }
+
+        .discount-large {
+            font-size: 56px;
+        }
+
+        .discount-text {
+            font-size: 36px;
+        }
+
+        .discount-spanish {
+            font-size: 20px;
+        }
+
+        .decorative-circles {
+            right: 30px;
+            top: -20px;
+        }
+
+        .circle {
+            width: 50px;
+            height: 50px;
+        }
+
+        .circle-light {
+            top: 30px;
+            right: 30px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .header {
+            gap: 20px;
+        }
+
+        .hero-content h1 {
+            font-size: 28px;
+        }
+
+        .hero-content p {
+            font-size: 12px;
+        }
+
+        .logo {
+            font-size: 36px;
+        }
+
+        .subtitle {
+            font-size: 12px;
+        }
+
+        .tagline {
+            font-size: 14px;
+        }
+
+        .banner-text {
+            font-size: 16px;
+        }
+
+        .banner-text-es {
+            font-size: 14px;
+        }
+
+        .discount-large {
+            font-size: 48px;
+        }
+
+        .discount-text {
+            font-size: 30px;
+        }
+
+        .discount-spanish {
+            font-size: 18px;
+        }
+
+        .decorative-circles {
+            display: none;
+        }
+    }
 </style>

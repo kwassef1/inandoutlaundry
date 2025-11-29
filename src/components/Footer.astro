@@ -2,7 +2,7 @@
 /* No props needed */
 ---
 
-<footer class="footer">
+<footer id="footer">
     <div class="container footer-inner">
         <div class="footer-section">
             <h3>In & Out Laundry</h3>
@@ -22,7 +22,8 @@
             <p>(551) 326-2031</p>
             <p>
                 <a href="mailto:info@inandoutlaundry.com"
-                    >info@inandoutlaundry.com</a>
+                    >info@inandoutlaundry.com</a
+                >
             </p>
         </div>
     </div>
@@ -36,7 +37,7 @@
 
 <style>
     /* Footer Background — matching header brightness */
-    .footer {
+    #footer {
         background: var(--iol-sky);
         padding: 1rem 0 0.5rem;
         border-top: 1px solid rgba(0, 0, 0, 0.05);
@@ -91,7 +92,7 @@
     /* Mobile adjustments */
     /* Tablet and Medium Screens */
     @media (max-width: 968px) {
-        .footer {
+        #footer {
             padding: 1.5rem 0 0.5rem;
         }
         .footer-inner {
@@ -120,7 +121,7 @@
 
     /* Mobile Landscape and Tablet Portrait */
     @media (max-width: 800px) {
-        .footer {
+        #footer {
             padding: 1.5rem 0 0.5rem;
         }
         .footer-inner {

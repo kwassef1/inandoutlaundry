@@ -2,7 +2,7 @@
 import logo from "../assets/inout.svg";
 ---
 
-<header class="header">
+<header id="header">
     <div class="container">
         <div class="logo">
             <img src={logo.src} alt="In & Out Laundry Logo" class="iol-logo" />
@@ -11,8 +11,8 @@ import logo from "../assets/inout.svg";
 
         <nav class="nav">
             <ul>
-                <li><a href="#footer">Services</a></li>
-                <li><a href="#footer">Hours</a></li>
+                <li><a href="#product-grid-section">Services</a></li>
+                <li><a href="#hours-section">Hours</a></li>
                 <li><a href="#footer">Contact</a></li>
             </ul>
         </nav>
@@ -21,7 +21,7 @@ import logo from "../assets/inout.svg";
 
 <style>
     /* Header Styles */
-    .header {
+    #header {
         background-color: var(--iol-sky);
         padding: 1.2rem 0.8rem 1.2rem;
         position: relative;
@@ -78,7 +78,7 @@ import logo from "../assets/inout.svg";
     }
 
     @media (max-width: 968px) {
-        .header {
+        #header {
             padding: 1rem 0.6rem;
         }
         .container {
@@ -101,7 +101,7 @@ import logo from "../assets/inout.svg";
 
     /* Mobile Landscape */
     @media (max-width: 800px) {
-        .header {
+        #header {
             padding: 1rem 0.5rem;
         }
         .container {

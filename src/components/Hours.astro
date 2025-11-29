@@ -17,7 +17,7 @@ const {
 } = Astro.props;
 ---
 
-<section class="hours-section">
+<section id="hours-section">
     <div class="container">
         <div class="hours-header">
             <h2>{title}</h2>
@@ -39,112 +39,111 @@ const {
 </section>
 
 <style>
-    .hours-section {
-    padding: 4rem 1rem;
-    background-color: var(--iol-sky);
-}
+    #hours-section {
+        padding: 4rem 1rem;
+        background-color: var(--iol-sky);
+    }
 
-.container {
-    max-width: 600px;
-    margin: 0 auto;
-}
+    .container {
+        max-width: 600px;
+        margin: 0 auto;
+    }
 
-.hours-header {
-    text-align: center;
-    margin-bottom: 2.5rem;
-}
-
-h2 {
-    font-size: 1.875rem;
-    font-weight: 700;
-    color: var(--iol-navy);
-    margin-bottom: 0.5rem;
-}
-
-.subtitle {
-    font-size: 1.125rem;
-    color: var(--iol-navy);
-    opacity: 0.7;
-}
-
-.hours-list {
-    background: var(--iol-white);
-    border-radius: 0.5rem;
-    box-shadow: 0 4px 6px rgba(10, 29, 68, 0.1);
-    padding: 2rem;
-}
-
-.hours-row {
-    display: flex;
-    align-items: center;
-    padding: 1rem 0;
-    border-bottom: 1px solid rgba(10, 29, 68, 0.1);
-    transition: background-color 0.2s ease;
-}
-
-.hours-row:last-child {
-    border-bottom: none;
-}
-
-.hours-row:hover {
-    background-color: var(--iol-sky);
-}
-
-.day {
-    font-size: 1.125rem;
-    color: var(--iol-navy);
-    min-width: 120px;
-}
-
-.divider {
-    flex: 1;
-    height: 1px;
-    background: linear-gradient(
-        to right,
-        transparent,
-        var(--iol-aqua),
-        transparent
-    );
-    margin: 0 1rem;
-}
-
-.time {
-    font-size: 1.125rem;
-    color: var(--iol-navy);
-    text-align: right;
-    min-width: 120px;
-}
-
-@media (max-width: 640px) {
-    .hours-section {
-        padding: 3rem 1rem;
+    .hours-header {
+        text-align: center;
+        margin-bottom: 2.5rem;
     }
 
     h2 {
-        font-size: 1.75rem;
+        font-size: 1.875rem;
+        font-weight: 700;
+        color: var(--iol-navy);
+        margin-bottom: 0.5rem;
     }
 
     .subtitle {
-        font-size: 1rem;
+        font-size: 1.125rem;
+        color: var(--iol-navy);
+        opacity: 0.7;
     }
 
     .hours-list {
-        padding: 1.5rem 1rem;
+        background: var(--iol-white);
+        border-radius: 0.5rem;
+        box-shadow: 0 4px 6px rgba(10, 29, 68, 0.1);
+        padding: 2rem;
     }
 
     .hours-row {
-        padding: 0.75rem 0;
+        display: flex;
+        align-items: center;
+        padding: 1rem 0;
+        border-bottom: 1px solid rgba(10, 29, 68, 0.1);
+        transition: background-color 0.2s ease;
     }
 
-    .day,
-    .time {
-        font-size: 1rem;
-        min-width: 80px;
+    .hours-row:last-child {
+        border-bottom: none;
+    }
+
+    .hours-row:hover {
+        background-color: var(--iol-sky);
+    }
+
+    .day {
+        font-size: 1.125rem;
+        color: var(--iol-navy);
+        min-width: 120px;
     }
 
     .divider {
-        margin: 0 0.5rem;
+        flex: 1;
+        height: 1px;
+        background: linear-gradient(
+            to right,
+            transparent,
+            var(--iol-aqua),
+            transparent
+        );
+        margin: 0 1rem;
     }
-}
 
+    .time {
+        font-size: 1.125rem;
+        color: var(--iol-navy);
+        text-align: right;
+        min-width: 120px;
+    }
+
+    @media (max-width: 640px) {
+        #hours-section {
+            padding: 3rem 1rem;
+        }
+
+        h2 {
+            font-size: 1.75rem;
+        }
+
+        .subtitle {
+            font-size: 1rem;
+        }
+
+        .hours-list {
+            padding: 1.5rem 1rem;
+        }
+
+        .hours-row {
+            padding: 0.75rem 0;
+        }
+
+        .day,
+        .time {
+            font-size: 1rem;
+            min-width: 80px;
+        }
+
+        .divider {
+            margin: 0 0.5rem;
+        }
+    }
 </style>

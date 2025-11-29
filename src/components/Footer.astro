@@ -3,98 +3,233 @@
 ---
 
 <footer class="footer">
-  <div class="container footer-inner">
+    <div class="container footer-inner">
+        <div class="footer-section">
+            <h3>In & Out Laundry</h3>
+            <p>Your modern laundromat in Newark, NJ</p>
+        </div>
 
-    <div class="footer-section">
-      <h3>In & Out Laundry</h3>
-      <p>Your modern laundromat in Newark, NJ</p>
+        <div class="footer-section">
+            <h4>Hours</h4>
+            <p>7:00 AM – 9:00 PM</p>
+            <p>Open Every Day</p>
+        </div>
+
+        <div class="footer-section">
+            <h4>Contact</h4>
+            <p>264 Broadway, Newark, NJ</p>
+            <p>(Entrance on side street)</p>
+            <p>(551) 326-2031</p>
+            <p>
+                <a href="mailto:info@inandoutlaundry.com"
+                    >info@inandoutlaundry.com</a>
+            </p>
+        </div>
     </div>
 
-    <div class="footer-section">
-      <h4>Hours</h4>
-      <p>7:00 AM – 9:00 PM</p>
-      <p>Open Every Day</p>
+    <div class="footer-bottom">
+        <p>
+            © {new Date().getFullYear()} In & Out Laundry. All rights reserved.
+        </p>
     </div>
-
-    <div class="footer-section">
-      <h4>Contact</h4>
-      <p>264 Broadway, Newark, NJ</p>
-      <p>(Entrance on side street)</p>
-      <p>(551) 326-2031</p>
-      <p><a href="mailto:info@inandoutlaundry.com">info@inandoutlaundry.com</a></p>
-    </div>
-
-  </div>
-
-  <div class="footer-bottom">
-    <p>© {new Date().getFullYear()} In & Out Laundry. All rights reserved.</p>
-  </div>
 </footer>
 
 <style>
+    /* Footer Background — matching header brightness */
+    .footer {
+        background: var(--iol-sky);
+        padding: 1rem 0 0.5rem;
+        border-top: 1px solid rgba(0, 0, 0, 0.05);
+    }
 
-/* Footer Background — matching header brightness */
-.footer {
-  background: var(--iol-sky);
-  padding: 1rem 0 0.5rem;
-  border-top: 1px solid rgba(0,0,0,0.05);
-}
+    /* Match header layout: horizontal row with spacing */
+    .footer-inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 4rem;
+        padding: 0 0 0.5rem;
+        flex-wrap: wrap; /* Allows wrapping on small screens */
+    }
 
-/* Match header layout: horizontal row with spacing */
-.footer-inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 4rem;
-  padding: 0 0 0.5rem;
-  flex-wrap: wrap; /* Allows wrapping on small screens */
-}
+    /* Footer section styling */
+    .footer-section {
+        min-width: 200px;
+        flex: 1;
+        padding: 0 2rem;
+    }
 
-/* Footer section styling */
-.footer-section {
-  min-width: 200px;
-  flex: 1;
-  padding: 0 2rem;
-}
+    /* Section titles */
+    .footer-section h3,
+    .footer-section h4 {
+        color: var(--iol-navy);
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+        text-align: center;
+    }
 
-/* Section titles */
-.footer-section h3,
-.footer-section h4 {
-  color: var(--iol-navy);
-  font-weight: 700;
-  margin-bottom: 0.5rem;
-  text-align: center;
-}
+    /* Paragraph + links */
+    .footer-section p,
+    .footer-section a {
+        color: var(--iol-navy);
+        font-size: 0.95rem;
+        font-family: var(--iol-font);
+        opacity: 0.85;
+        text-align: center;
+    }
 
-/* Paragraph + links */
-.footer-section p,
-.footer-section a {
-  color: var(--iol-navy);
-  font-size: 0.95rem;
-  font-family: var(--iol-font);
-  opacity: 0.85;
-  text-align: center;
-}
+    /* Bottom bar */
+    .footer-bottom {
+        text-align: center;
+        padding-top: 0.5rem;
+        opacity: 0.8;
+        font-size: 0.85rem;
+        color: var(--iol-navy);
+        border-top: 1px solid rgba(0, 0, 0, 0.05);
+    }
 
+    /* Mobile adjustments */
+    /* Tablet and Medium Screens */
+    @media (max-width: 968px) {
+        .footer {
+            padding: 1.5rem 0 0.5rem;
+        }
+        .footer-inner {
+            gap: 3rem;
+            padding: 0 1rem 0.5rem;
+        }
+        .footer-section {
+            padding: 0 1.5rem;
+            min-width: 180px;
+        }
+        .footer-section h3 {
+            font-size: 1.3rem;
+        }
+        .footer-section h4 {
+            font-size: 1.1rem;
+        }
+        .footer-section p,
+        .footer-section a {
+            font-size: 0.9rem;
+        }
+        .footer-bottom {
+            font-size: 0.8rem;
+            padding: 0.5rem 1rem;
+        }
+    }
 
+    /* Mobile Landscape and Tablet Portrait */
+    @media (max-width: 800px) {
+        .footer {
+            padding: 1.5rem 0 0.5rem;
+        }
+        .footer-inner {
+            gap: 2.5rem;
+            padding: 0 0.8rem 0.5rem;
+        }
+        .footer-section {
+            padding: 0 1rem;
+            min-width: 160px;
+        }
+        .footer-section h3 {
+            font-size: 1.2rem;
+        }
+        .footer-section h4 {
+            font-size: 1rem;
+        }
+        .footer-section p,
+        .footer-section a {
+            font-size: 0.88rem;
+            line-height: 1.5;
+        }
+    }
 
-/* Bottom bar */
-.footer-bottom {
-  text-align: center;
-  padding-top: 0.5rem;
-  opacity: 0.8;
-  font-size: 0.85rem;
-  color: var(--iol-navy);
-  border-top: 1px solid rgba(0,0,0,0.05);
-}
+    /* Mobile Portrait */
+    @media (max-width: 600px) {
+        .footer {
+            padding: 1.5rem 0 0.5rem;
+        }
+        .footer-inner {
+            flex-direction: column;
+            text-align: center;
+            gap: 1.5rem;
+            padding: 0 0.5rem 0.5rem;
+        }
+        .footer-section {
+            padding: 0;
+            min-width: 100%;
+        }
+        .footer-section h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.4rem;
+        }
+        .footer-section h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.4rem;
+        }
+        .footer-section p,
+        .footer-section a {
+            font-size: 0.9rem;
+            margin: 0.3rem 0;
+        }
+        .footer-bottom {
+            font-size: 0.8rem;
+            padding: 0.6rem 0.5rem 0.4rem;
+        }
+    }
 
-/* Mobile adjustments */
-@media (max-width: 600px) {
-  .footer-inner {
-    flex-direction: column;
-    text-align: center;
-    gap: 1.5rem;
-  }
-}
+    /* Extra Small Screens */
+    @media (max-width: 480px) {
+        .footer {
+            padding: 1.2rem 0 0.4rem;
+        }
+        .footer-inner {
+            gap: 1.2rem;
+            padding: 0 0.4rem 0.4rem;
+        }
+        .footer-section h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.3rem;
+        }
+        .footer-section h4 {
+            font-size: 1rem;
+            margin-bottom: 0.3rem;
+        }
+        .footer-section p,
+        .footer-section a {
+            font-size: 0.85rem;
+            margin: 0.25rem 0;
+            line-height: 1.4;
+        }
+        .footer-bottom {
+            font-size: 0.75rem;
+            padding: 0.5rem 0.4rem 0.3rem;
+        }
+    }
 
+    /* Very Small Screens */
+    @media (max-width: 360px) {
+        .footer {
+            padding: 1rem 0 0.3rem;
+        }
+        .footer-inner {
+            gap: 1rem;
+            padding: 0 0.3rem 0.3rem;
+        }
+        .footer-section h3 {
+            font-size: 1.2rem;
+        }
+        .footer-section h4 {
+            font-size: 0.95rem;
+        }
+        .footer-section p,
+        .footer-section a {
+            font-size: 0.8rem;
+            margin: 0.2rem 0;
+        }
+        .footer-bottom {
+            font-size: 0.7rem;
+            padding: 0.4rem 0.3rem 0.2rem;
+        }
+    }
 </style>

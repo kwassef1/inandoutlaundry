@@ -1,149 +1,114 @@
 ---
-interface HoursDay {
-    day: string;
-    hours: string;
-}
-
-interface Props {
-    title?: string;
-    subtitle?: string;
-    hours: HoursDay[];
-}
-
-const {
-    title = "Store Hours",
-    subtitle = "We're here to serve you",
-    hours,
+const { 
+  title = "Hours & Location",
+  address = "264 Broadway, Newark, NJ 07104\n(Entrance on side street)",
+  hours = [
+    { days: "Everyday", time: "7:00 AM – 9:00 PM" },
+    { days: "Last Wash", time: "8:30 PM" }
+  ]
 } = Astro.props;
 ---
 
-<section id="hours-section">
-    <div class="container">
-        <div class="hours-header">
-            <h2>{title}</h2>
-            {subtitle && <p class="subtitle">{subtitle}</p>}
-        </div>
+<section class="hours-section">
+  <div class="container">
+    <h2 class="section-title">{title}</h2>
 
-        <div class="hours-list">
-            {
-                hours.map((item) => (
-                    <div class="hours-row">
-                        <span class="day">{item.day}</span>
-                        <span class="divider" />
-                        <span class="time">{item.hours}</span>
-                    </div>
-                ))
-            }
-        </div>
+    <div class="hours-grid">
+      <div class="hours-block">
+        <h3 class="small-heading">Hours</h3>
+
+        <ul class="hours-list">
+          {hours.map((item: { days: string; time: string }) => (
+            <li>
+              <span class="days">{item.days}</span>
+              <span class="time">{item.time}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+      
+      <div class="location-block">
+        <h3 class="small-heading">Location</h3>
+        <p class="address">{address}</p>
+      </div>
+
+      
     </div>
+  </div>
 </section>
 
 <style>
-    #hours-section {
-        padding: 4rem 1rem;
-        background-color: var(--iol-sky);
+  .hours-section {
+    padding: 4rem 0;
+    background: var(--iol-sky);
+  }
+
+  .section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--iol-navy);
+    text-align: center;
+    margin-bottom: 2.5rem;
+  }
+
+  .hours-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12rem;
+  }
+
+  .small-heading {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--iol-navy);
+    text-transform: uppercase;
+    margin-bottom: 0.6rem;
+    letter-spacing: 0.06em;
+  }
+
+  .address {
+    margin: 0;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #3a3a3a;
+  }
+
+  .hours-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .hours-list li {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.6rem 0;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    font-size: 1.1rem;
+    color: #3a3a3a;
+  }
+
+  .hours-list li:last-child {
+    border-bottom: none;
+  }
+
+  .days {
+    font-weight: 500;
+  }
+
+  .time {
+    font-weight: 600;
+    color: var(--iol-navy);
+  }
+
+  @media (max-width: 768px) {
+    .hours-grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
     }
 
-    .container {
-        max-width: 600px;
-        margin: 0 auto;
+    .section-title {
+      font-size: 1.75rem;
     }
-
-    .hours-header {
-        text-align: center;
-        margin-bottom: 2.5rem;
-    }
-
-    h2 {
-        font-size: 1.875rem;
-        font-weight: 700;
-        color: var(--iol-navy);
-        margin-bottom: 0.5rem;
-    }
-
-    .subtitle {
-        font-size: 1.125rem;
-        color: var(--iol-navy);
-        opacity: 0.7;
-    }
-
-    .hours-list {
-        background: var(--iol-white);
-        border-radius: 0.5rem;
-        box-shadow: 0 4px 6px rgba(10, 29, 68, 0.1);
-        padding: 2rem;
-    }
-
-    .hours-row {
-        display: flex;
-        align-items: center;
-        padding: 1rem 0;
-        border-bottom: 1px solid rgba(10, 29, 68, 0.1);
-        transition: background-color 0.2s ease;
-    }
-
-    .hours-row:last-child {
-        border-bottom: none;
-    }
-
-    .hours-row:hover {
-        background-color: var(--iol-sky);
-    }
-
-    .day {
-        font-size: 1.125rem;
-        color: var(--iol-navy);
-        min-width: 120px;
-    }
-
-    .divider {
-        flex: 1;
-        height: 1px;
-        background: linear-gradient(
-            to right,
-            transparent,
-            var(--iol-aqua),
-            transparent
-        );
-        margin: 0 1rem;
-    }
-
-    .time {
-        font-size: 1.125rem;
-        color: var(--iol-navy);
-        text-align: right;
-        min-width: 120px;
-    }
-
-    @media (max-width: 640px) {
-        #hours-section {
-            padding: 3rem 1rem;
-        }
-
-        h2 {
-            font-size: 1.75rem;
-        }
-
-        .subtitle {
-            font-size: 1rem;
-        }
-
-        .hours-list {
-            padding: 1.5rem 1rem;
-        }
-
-        .hours-row {
-            padding: 0.75rem 0;
-        }
-
-        .day,
-        .time {
-            font-size: 1rem;
-            min-width: 80px;
-        }
-
-        .divider {
-            margin: 0 0.5rem;
-        }
-    }
+  }
 </style>

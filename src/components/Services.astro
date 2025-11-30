@@ -1,7 +1,6 @@
 ---
-// src/components/Services.astro
-// Place your service images in public/images/ folder
-// Update image paths below accordingly
+import folded from '../src/assets/folded.webp';
+import washing from '../src/assets/washing.webp';
 
 const services = [
   {
@@ -9,7 +8,7 @@ const services = [
     title: 'Self-Service Laundry',
     subtitle: 'Do it yourself with modern equipment',
     icon: '🧺',
-    image: '../src/assets/washing.webp',
+    image: washing.src,
     features: [
       'Modern, high-efficiency washers and dryers',
       'Fast cycles - wash and dry in under an hour',
@@ -25,7 +24,7 @@ Our facilities are kept spotlessly clean and well-maintained, ensuring a pleasan
     title: 'Wash & Fold Service',
     subtitle: 'We do the work, you save time',
     icon: '👕',
-    image: '../src/assets/folded.webp',
+    image: folded.src,
     // Recommended: Pexels or Unsplash photo showing neatly folded laundry stacks
     // Try: https://www.pexels.com/search/folded%20clothes/
     features: [

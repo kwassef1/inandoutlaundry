@@ -7,6 +7,7 @@ import cloudflare from '@astrojs/cloudflare';
 const isProd = import.meta.env.PROD;
 
 export default defineConfig({
+  site: 'https://inandoutlaundry.com',
   adapter: isProd ? cloudflare() : undefined,
   output: isProd ? undefined : "static",
 });

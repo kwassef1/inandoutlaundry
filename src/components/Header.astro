@@ -24,8 +24,10 @@ import logo from "../assets/inout.svg";
     #header {
         background-color: var(--iol-white);
         padding: 1.2rem 0.8rem 1.2rem;
-        position: relative;
+        position: sticky;
         overflow: hidden;
+        top: 0;
+        z-index: 1000;
     }
 
     .container {
@@ -74,7 +76,7 @@ import logo from "../assets/inout.svg";
     }
 
     .nav a:hover {
-        color: var(--iol-white);
+        color: var(--iol-medium-blue);
     }
 
     @media (max-width: 968px) {

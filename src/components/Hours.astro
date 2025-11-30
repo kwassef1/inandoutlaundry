@@ -4,18 +4,18 @@ const {
   address = "264 Broadway, Newark, NJ 07104\n(Entrance on side street)",
   hours = [
     { days: "Everyday", time: "7:00 AM – 9:00 PM" },
-    { days: "Last Wash", time: "8:30 PM" }
+    { days: "Last Wash", time: "8:00 PM" }
   ]
 } = Astro.props;
 ---
 
 <section class="hours-section">
-  <div class="container">
+  <div class="container-hours">
     <h2 class="section-title">{title}</h2>
 
     <div class="hours-grid">
       <div class="hours-block">
-        <h3 class="small-heading">Hours</h3>
+        <h3 class="small-heading-hours">Hours</h3>
 
         <ul class="hours-list">
           {hours.map((item: { days: string; time: string }) => (
@@ -39,10 +39,16 @@ const {
 
 <style>
   .hours-section {
-    padding: 4rem 0;
     background: var(--iol-sky);
   }
 
+  .container-hours {
+        max-width: 1400px;
+        width: 100%;
+        margin: 0 auto;
+
+        padding-bottom: 3rem;
+    }
   .section-title {
     font-size: 2rem;
     font-weight: 700;
@@ -66,6 +72,15 @@ const {
     letter-spacing: 0.06em;
   }
 
+  .small-heading-hours {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--iol-navy);
+    text-transform: uppercase;
+    margin-bottom: 0.6rem;
+    letter-spacing: 0.06em;
+    padding-left: 0.75rem;
+  }
   .address {
     margin: 0;
     font-size: 1.1rem;
@@ -82,7 +97,7 @@ const {
   .hours-list li {
     display: flex;
     justify-content: space-between;
-    padding: 0.6rem 0;
+    padding: 0.75rem;
     border-bottom: 1px solid rgba(0,0,0,0.1);
     font-size: 1.1rem;
     color: #3a3a3a;

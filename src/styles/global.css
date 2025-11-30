@@ -22,6 +22,7 @@ body {
   background: var(--iol-white);
   color: var(--iol-navy);
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 a {

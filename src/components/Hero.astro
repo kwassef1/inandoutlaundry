@@ -2,7 +2,7 @@
 import basket from "../assets/laundry_basket.webp";
 ---
 
-<div class="container">
+<div class="hero">
     <div class="header">
         <div class="hero-content">
             <h1>Welcome to <pre>In & Out Laundry</pre></h1>
@@ -57,7 +57,7 @@ import basket from "../assets/laundry_basket.webp";
         background: var(--iol-sky);
     }
 
-    .container {
+    .hero {
         max-width: 1200px;
         margin: auto;
     }
@@ -156,7 +156,7 @@ import basket from "../assets/laundry_basket.webp";
     .content {
         display: flex;
         align-items: center;
-        background: linear-gradient(to right, white 50%, #3ebbf0 50%);
+        background: #3ebbf0;
         position: relative;
     }
 
@@ -226,6 +226,10 @@ import basket from "../assets/laundry_basket.webp";
     @media (max-width: 968px) {
         .content {
             flex-direction: column;
+        }
+
+        .banner {
+            text-align: center;
         }
 
         .image-section {

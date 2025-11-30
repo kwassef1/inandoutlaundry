@@ -68,6 +68,16 @@ import logo from "../assets/inout.svg";
         color: var(--iol-navy);
         opacity: 0.85;
         text-decoration: none;
+        text-align: center;
+        margin: 0;
+    }
+
+    .header-address a {
+        color: var(--iol-navy);
+        text-decoration: none;
+    }
+    .header-address a:hover {
+        color: var(--iol-medium-blue);
     }
 
     /* Phone */
@@ -83,7 +93,7 @@ import logo from "../assets/inout.svg";
     }
 
     .header-phone a:hover {
-        text-decoration: underline;
+        color: var(--iol-medium-blue);
     }
 
     /* Logo Styles */
@@ -130,7 +140,7 @@ import logo from "../assets/inout.svg";
         display: flex;
         gap: 2rem;
         margin: 0;
-        padding:;
+        padding: 0;
     }
 
     .nav a {
@@ -148,23 +158,33 @@ import logo from "../assets/inout.svg";
 
     @media (max-width: 968px) {
         #header {
-            padding: 1rem 0.6rem;
+            padding: 1.2rem 0.6rem;
         }
         .container {
             padding: 0 1rem;
             gap: 0.8rem;
         }
         .logo img {
-            height: 28px;
+            height: 36px;
         }
         .logo a {
+            font-size: 2.5rem;
+        }
+
+        .slogan {
             font-size: 1.5rem;
+        }
+        .header-address a {
+            font-size: 1.2rem;
+        }
+        .header-phone a {
+            font-size: 1.1rem;
         }
         .nav ul {
             gap: 1.5rem;
         }
         .nav a {
-            font-size: 0.95rem;
+            font-size: 1.3rem;
         }
     }
 
@@ -181,10 +201,20 @@ import logo from "../assets/inout.svg";
             gap: 0.6rem;
         }
         .logo img {
-            height: 26px;
+            height: 32px;
         }
         .logo a {
-            font-size: 1.4rem;
+            font-size: 2.2rem;
+        }
+
+        .slogan {
+            font-size: 1.3rem;
+        }
+        .header-address a {
+            font-size: 1.1rem;
+        }
+        .header-phone a {
+            font-size: 1.05rem;
         }
         .nav ul {
             gap: 1rem;
@@ -192,53 +222,124 @@ import logo from "../assets/inout.svg";
             justify-content: center;
         }
         .nav a {
-            font-size: 0.9rem;
-        }
-    }
-
-    /* Responsive Adjustments */
-    @media (max-width: 768px) {
-        .logo img {
-            height: 34px;
-        }
-        .business-name {
-            font-size: 1.8rem;
-        }
-        .slogan {
-            font-size: 1.05rem;
-        }
-        .header-address a {
             font-size: 1.15rem;
         }
-        .header-phone a {
-            font-size: 1.25rem;
-        }
-        .nav ul {
-            gap: 1.2rem;
-        }
     }
 
-    @media (max-width: 480px) {
+    @media (max-width: 768px) {
         .logo img {
             height: 30px;
         }
-        .business-name {
-            font-size: 1.6rem;
+
+        .logo a {
+            font-size: 2rem;
         }
+
         .slogan {
-            font-size: 0.95rem;
+            font-size: 1.2rem;
         }
+
         .header-address a {
             font-size: 1.05rem;
         }
+
         .header-phone a {
-            font-size: 1.15rem;
+            font-size: 1rem;
         }
+
+        .nav ul {
+            gap: 1.2rem;
+        }
+
+        .nav a {
+            font-size: 1.1rem;
+        }
+    }
+
+    /* Mobile Portrait */
+    @media (max-width: 480px) {
+        #header {
+            padding: 0.8rem 0.4rem;
+        }
+
+        .container {
+            gap: 0.8rem;
+            padding: 0 0.6rem;
+        }
+
+        .logo {
+            gap: 0.5rem;
+        }
+
+        .logo img {
+            height: 26px;
+        }
+
+        .logo a {
+            font-size: 1.6rem;
+            letter-spacing: -0.3px;
+        }
+
+        .slogan {
+            font-size: 1rem;
+        }
+
+        .header-address a {
+            font-size: 0.95rem;
+        }
+
+        .header-phone a {
+            font-size: 0.95rem;
+        }
+
         .nav ul {
             gap: 0.8rem;
         }
+
+        .nav a {
+            font-size: 0.95rem;
+            padding: 0.3rem 0.5rem;
+        }
+    }
+
+    /* Extra Small Screens */
+    @media (max-width: 360px) {
+        #header {
+            padding: 0.6rem 0.3rem;
+        }
+
+        .container {
+            gap: 0.6rem;
+            padding: 0 0.4rem;
+        }
+
+        .logo img {
+            height: 22px;
+        }
+
+        .logo a {
+            font-size: 1.4rem;
+        }
+
+        .slogan {
+            font-size: 0.9rem;
+        }
+
+        .header-address a {
+            font-size: 0.85rem;
+        }
+
+        .header-phone a {
+            font-size: 0.85rem;
+        }
+
+        .nav ul {
+            gap: 0.5rem;
+        }
+
         .nav a {
             font-size: 0.85rem;
+            padding: 0.2rem 0.4rem;
         }
     }
 </style>

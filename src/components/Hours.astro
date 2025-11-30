@@ -116,14 +116,109 @@ const {
     color: var(--iol-navy);
   }
 
-  @media (max-width: 768px) {
-    .hours-grid {
-      grid-template-columns: 1fr;
-      gap: 2rem;
+  @media (max-width: 968px) {
+    .hours-section {
+      padding: 2.5rem 1rem;
     }
 
     .section-title {
       font-size: 1.75rem;
+      margin-bottom: 2rem;
+    }
+
+    .hours-grid {
+      gap: 6rem;
+    }
+
+    .address {
+      font-size: 1.05rem;
+    }
+
+    .hours-list li {
+      font-size: 1.05rem;
+      padding: 0.7rem;
+    }
+
+    .location-block 
+    {
+      padding-left: 0.5rem;
+    }
+  }
+  
+   /* Mobile Landscape */
+  @media (max-width: 800px) {
+    .hours-section {
+      padding: 2rem 1rem;
+    }
+
+    .container-hours {
+      padding: 0 1rem;
+    }
+
+    .section-title {
+      font-size: 1.6rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .hours-grid {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+
+    .small-heading,
+    .small-heading-hours {
+      font-size: 0.95rem;
+    }
+
+    .small-heading-hours {
+      padding-left: 0.5rem;
+    }
+
+    .address {
+      font-size: 1rem;
+    }
+
+    .hours-list li {
+      font-size: 1rem;
+      padding: 0.65rem 0.5rem;
+    }
+  }
+
+  /* Mobile Portrait */
+  @media (max-width: 480px) {
+    .hours-section {
+      padding: 1.5rem 0.75rem;
+    }
+
+    .container-hours {
+      padding: 0 0.75rem;
+    }
+
+    .section-title {
+      font-size: 1.4rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .hours-grid {
+      gap: 2rem;
+    }
+
+    .small-heading,
+    .small-heading-hours {
+      font-size: 0.9rem;
+    }
+
+    .small-heading-hours {
+      padding-left: 0.4rem;
+    }
+
+    .address {
+      font-size: 0.95rem;
+    }
+
+    .hours-list li {
+      font-size: 0.95rem;
+      padding: 0.6rem 0.4rem;
     }
   }
 </style>

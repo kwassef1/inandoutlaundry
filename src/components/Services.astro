@@ -95,8 +95,7 @@ We treat your clothes with care, using premium detergents and fabric softeners. 
       <h3>Questions about our services?</h3>
       <p>Call us at <a href="tel:5513262031">(551) 326-2031</a> or visit us at 264 Broadway, Newark, NJ</p>
       <div class="cta-buttons">
-        <a href="#footer" class="btn btn-primary">Contact Us</a>
-        <a href="#footer" class="btn btn-secondary">Get Directions</a>
+        <a href="https://maps.app.goo.gl/Ggubccb4rDwHfd9a7" class="btn btn-primary">Get Directions</a>
       </div>
     </div>
   </div>
@@ -193,7 +192,6 @@ We treat your clothes with care, using premium detergents and fabric softeners. 
     opacity: 0.9;
   }
 
-  /* When you add real images: */
   .service-image img {
     width: 100%;
     height: 100%;
@@ -310,22 +308,12 @@ We treat your clothes with care, using premium detergents and fabric softeners. 
   }
 
   .btn-primary {
-    background: var(--iol-aqua);
-    color: white;
-  }
-
-  .btn-primary:hover {
-    background: var(--iol-navy);
-    transform: translateY(-2px);
-  }
-
-  .btn-secondary {
     background: white;
     color: var(--iol-aqua);
     border: 2px solid var(--iol-aqua);
   }
 
-  .btn-secondary:hover {
+  .btn-primary:hover {
     background: var(--iol-aqua);
     color: white;
     transform: translateY(-2px);
@@ -336,7 +324,7 @@ We treat your clothes with care, using premium detergents and fabric softeners. 
       font-size: 2.5rem;
     }
 
-    .service-card {
+    .service-card, .service-card.reverse {
       grid-template-columns: 1fr;
       gap: 2rem;
       padding: 2rem;

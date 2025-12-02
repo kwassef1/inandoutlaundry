@@ -1,0 +1,380 @@
+---
+import folded from '../assets/folded.webp';
+import washing from '../assets/washing.webp';
+
+const services = [
+  {
+    id: 'self-service',
+    title: 'Self-Service Laundry',
+    subtitle: 'Do it yourself with modern equipment',
+    icon: '🧺',
+    image: washing.src,
+    features: [
+      'Modern, high-efficiency washers and dryers',
+      'Fast cycles - wash and dry in under an hour',
+      'Comfortable waiting area',
+      'Clean folding tables and laundry carts'
+    ],
+    description: `Take control of your laundry day at In & Out Laundry. Our self-service area features state-of-the-art washing machines and dryers that get your clothes perfectly clean in record time.
+
+Our facilities are kept spotlessly clean and well-maintained, ensuring a pleasant experience every visit. Use our spacious folding areas and enjoy the convenience of fast, efficient machines. Open 7 days a week from 7AM to 9PM, we're here when you need us.`
+  },
+  {
+    id: 'wash-fold',
+    title: 'Wash & Fold Service',
+    subtitle: 'We do the work, you save time',
+    icon: '👕',
+    image: folded.src,
+    // Recommended: Pexels or Unsplash photo showing neatly folded laundry stacks
+    // Try: https://www.pexels.com/search/folded%20clothes/
+    features: [
+      'Professional washing, drying, and folding',
+      'Same-day service available',
+      'Premium detergents and fabric softeners',
+      'Our professional attendants are trained to fold your clothes just like when they were new!',
+      'Do all your laundry in 4 minutes - 2 minutes to drop off and 2 minutes to pick up!',
+      'Let us do all the work! Most orders are ready for next day pickup.'
+    ],
+    description: `Say goodbye to laundry day! Our professional wash and fold service takes the hassle out of doing laundry. Simply drop off your clothes and we'll handle everything.
+
+We treat your clothes with care, using premium detergents and fabric softeners. Your laundry comes back neatly folded with retail-style precision, ready to put away in your drawers or closet. Whether you're a busy professional, parent, or student, our wash and fold service gives you back precious time to focus on what matters most.`
+  }
+];
+---
+
+<section class="services-section" id="services">
+  <div class="container">
+    <div class="section-header">
+      <h2>Our Services</h2>
+      <p class="subtitle">
+        Choose the service that fits your lifestyle – from DIY to full-service delivery
+      </p>
+    </div>
+
+    <div class="services-list">
+      {services.map((service, index) => (
+        <div class={`service-card ${index % 2 === 1 ? 'reverse' : ''}`}>
+          <div class="service-image">
+            <div class="image-placeholder">
+              <img src={service.image} alt={service.title} />
+
+            </div>
+          </div>
+
+          <div class="service-content">
+            <div class="service-header">
+              <h3>{service.title}</h3>
+              <p class="service-subtitle">{service.subtitle}</p>
+            </div>
+
+            <div class="service-features">
+              <h4>What's Included:</h4>
+              <ul>
+                {service.features.map((feature) => (
+                  <li>
+                    <span class="checkmark">✓</span>
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div class="service-description">
+              {service.description.split('\n\n').map((paragraph) => (
+                <p>{paragraph}</p>
+              ))}
+            </div>
+
+            
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <div class="cta-section">
+      <h3>Questions about our services?</h3>
+      <p>Call us at <a href="tel:5513262031">(551) 326-2031</a> or visit us at 264 Broadway, Newark, NJ</p>
+      <div class="cta-buttons">
+        <a href="https://maps.app.goo.gl/Ggubccb4rDwHfd9a7" class="btn btn-primary">Get Directions</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .services-section {
+    padding: 3rem 1rem;
+    background: var(--iol-sky);
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .section-header h2 {
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--iol-navy);
+    margin-bottom: 1rem;
+  }
+
+  .subtitle {
+    font-size: 1.25rem;
+    color: #4b5563;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .services-list {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+  }
+
+  .service-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    background: white;
+    border-radius: 16px;
+    padding: 3rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+  }
+
+  .service-card.reverse {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .service-card.reverse .service-image {
+    order: 2;
+  }
+
+  .service-card.reverse .service-content {
+    order: 1;
+  }
+
+  .service-image {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .image-placeholder {
+    aspect-ratio: 15/16;
+    background: linear-gradient(135deg, var(--iol-aqua) 0%, var(--iol-medium-blue) 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    border-radius: 12px;
+  }
+
+  .service-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+  }
+
+  .image-placeholder p {
+    font-size: 1rem;
+    opacity: 0.9;
+  }
+
+  .service-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+  }
+
+  .service-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .service-header h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--iol-navy);
+    margin-bottom: 0.5rem;
+  }
+
+  .service-subtitle {
+    font-size: 1.1rem;
+    color: var(--iol-aqua);
+    font-weight: 600;
+  }
+
+  .service-description {
+    color: #4b5563;
+    line-height: 1.7;
+    font-size: 1rem;
+  }
+
+  .service-description p {
+    margin-bottom: 1rem;
+  }
+
+  .service-features h4 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--iol-navy);
+    margin-bottom: 0.75rem;
+  }
+
+  .service-features ul {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    gap: 0.5rem;
+  }
+
+  .service-features li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    color: #4b5563;
+    font-size: 0.95rem;
+  }
+
+  .service-features li:first-child {
+    font-weight: 600;
+    color: var(--iol-navy);
+    font-size: 1rem;
+  }
+
+  .checkmark {
+    color: var(--iol-aqua);
+    font-weight: bold;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+  }
+
+  .cta-section {
+    text-align: center;
+    margin-top: 5rem;
+    padding: 3rem;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  }
+
+  .cta-section h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--iol-navy);
+    margin-bottom: 1rem;
+  }
+
+  .cta-section p {
+    font-size: 1.1rem;
+    color: #4b5563;
+    margin-bottom: 2rem;
+  }
+
+  .cta-section a[href^="tel"] {
+    color: var(--iol-aqua);
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 1.1rem;
+  }
+
+  .btn-primary {
+    background: white;
+    color: var(--iol-aqua);
+    border: 2px solid var(--iol-aqua);
+  }
+
+  .btn-primary:hover {
+    background: var(--iol-aqua);
+    color: white;
+    transform: translateY(-2px);
+  }
+
+  @media (max-width: 968px) {
+    .section-header h2 {
+      font-size: 2.5rem;
+    }
+
+    .service-card, .service-card.reverse {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      padding: 2rem;
+    }
+
+    .service-card.reverse .service-image,
+    .service-card.reverse .service-content {
+      order: initial;
+    }
+
+    .service-header h3 {
+      font-size: 1.75rem;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .services-section {
+      padding: 2rem 0.5rem;
+    }
+
+    .section-header h2 {
+      font-size: 2rem;
+    }
+
+    .subtitle {
+      font-size: 1rem;
+    }
+
+    .service-card {
+      padding: 1.5rem;
+    }
+
+    .service-header h3 {
+      font-size: 1.5rem;
+    }
+
+    .cta-section {
+      padding: 2rem 1.5rem;
+    }
+
+    .cta-section h3 {
+      font-size: 1.5rem;
+    }
+
+    .cta-buttons {
+      flex-direction: column;
+    }
+
+    .btn {
+      width: 100%;
+    }
+  }
+</style>

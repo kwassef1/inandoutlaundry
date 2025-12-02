@@ -1,12 +1,11 @@
 ---
-import { Image } from "astro:assets";
 import basket from "../assets/laundry_basket.webp";
 ---
 
-<div class="container">
+<div class="hero">
     <div class="header">
         <div class="hero-content">
-            <h1>Welcome to <pre>In & Out Laundry</pre></h1>
+            <h1>Welcome to <pre>In & Out Wash</pre></h1>
             <p>Your modern laundromat in Newark, NJ</p>
         </div>
         <div class="promo-header">
@@ -29,7 +28,7 @@ import basket from "../assets/laundry_basket.webp";
                 src={basket.src}
                 alt="Worker with laundry basket"
                 class="worker-image"
-                />
+            />
         </div>
 
         <div class="promo-section">
@@ -55,12 +54,12 @@ import basket from "../assets/laundry_basket.webp";
 
     body {
         font-family: "Arial", sans-serif;
-        background: white;
+        background: var(--iol-sky);
     }
 
-    .container {
+    .hero {
         max-width: 1200px;
-        margin: 0 auto;
+        margin: auto;
     }
 
     .hero-content {
@@ -102,7 +101,7 @@ import basket from "../assets/laundry_basket.webp";
     .header {
         padding: 40px 20px 20px;
         display: flex;
-        gap: 40px;
+        gap: 150px;
         align-items: center;
         justify-content: space-between;
         flex-direction: row;
@@ -157,7 +156,7 @@ import basket from "../assets/laundry_basket.webp";
     .content {
         display: flex;
         align-items: center;
-        background: linear-gradient(to right, white 50%, #53c7ff 50%);
+        background: #3ebbf0;
         position: relative;
     }
 
@@ -227,7 +226,10 @@ import basket from "../assets/laundry_basket.webp";
     @media (max-width: 968px) {
         .content {
             flex-direction: column;
-            background: #3ebbf0;
+        }
+
+        .banner {
+            text-align: center;
         }
 
         .image-section {
@@ -271,7 +273,6 @@ import basket from "../assets/laundry_basket.webp";
 
         .content {
             flex-direction: column;
-            background: #3ebbf0;
             padding: 30px 20px;
         }
 

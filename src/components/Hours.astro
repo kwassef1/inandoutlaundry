@@ -1,0 +1,224 @@
+---
+const { 
+  title = "Hours & Location",
+  address = "264 Broadway, Newark, NJ 07104\n(Entrance on side street)",
+  hours = [
+    { days: "Everyday", time: "7:00 AM – 9:00 PM" },
+    { days: "Last Wash", time: "8:00 PM" }
+  ]
+} = Astro.props;
+---
+
+<section class="hours-section">
+  <div class="container-hours">
+    <h2 class="section-title">{title}</h2>
+
+    <div class="hours-grid">
+      <div class="hours-block">
+        <h3 class="small-heading-hours">Hours</h3>
+
+        <ul class="hours-list">
+          {hours.map((item: { days: string; time: string }) => (
+            <li>
+              <span class="days">{item.days}</span>
+              <span class="time">{item.time}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+      
+      <div class="location-block">
+        <h3 class="small-heading">Location</h3>
+        <p class="address">{address}</p>
+      </div>
+
+      
+    </div>
+  </div>
+</section>
+
+<style>
+  .hours-section {
+    background: var(--iol-sky);
+  }
+
+  .container-hours {
+        max-width: 1400px;
+        width: 100%;
+        margin: 0 auto;
+
+        padding-bottom: 3rem;
+    }
+  .section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--iol-navy);
+    text-align: center;
+    margin-bottom: 2.5rem;
+  }
+
+  .hours-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12rem;
+  }
+
+  .small-heading {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--iol-navy);
+    text-transform: uppercase;
+    margin-bottom: 0.6rem;
+    letter-spacing: 0.06em;
+  }
+
+  .small-heading-hours {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--iol-navy);
+    text-transform: uppercase;
+    margin-bottom: 0.6rem;
+    letter-spacing: 0.06em;
+    padding-left: 0.75rem;
+  }
+  .address {
+    margin: 0;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #3a3a3a;
+  }
+
+  .hours-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .hours-list li {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.75rem;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    font-size: 1.1rem;
+    color: #3a3a3a;
+  }
+
+  .hours-list li:last-child {
+    border-bottom: none;
+  }
+
+  .days {
+    font-weight: 500;
+  }
+
+  .time {
+    font-weight: 600;
+    color: var(--iol-navy);
+  }
+
+  @media (max-width: 968px) {
+    .hours-section {
+      padding: 2.5rem 1rem;
+    }
+
+    .section-title {
+      font-size: 1.75rem;
+      margin-bottom: 2rem;
+    }
+
+    .hours-grid {
+      gap: 6rem;
+    }
+
+    .address {
+      font-size: 1.05rem;
+    }
+
+    .hours-list li {
+      font-size: 1.05rem;
+      padding: 0.7rem;
+    }
+
+    .location-block 
+    {
+      padding-left: 0.5rem;
+    }
+  }
+  
+   /* Mobile Landscape */
+  @media (max-width: 800px) {
+    .hours-section {
+      padding: 2rem 1rem;
+    }
+
+    .container-hours {
+      padding: 0 1rem;
+    }
+
+    .section-title {
+      font-size: 1.6rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .hours-grid {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+
+    .small-heading,
+    .small-heading-hours {
+      font-size: 0.95rem;
+    }
+
+    .small-heading-hours {
+      padding-left: 0.5rem;
+    }
+
+    .address {
+      font-size: 1rem;
+    }
+
+    .hours-list li {
+      font-size: 1rem;
+      padding: 0.65rem 0.5rem;
+    }
+  }
+
+  /* Mobile Portrait */
+  @media (max-width: 480px) {
+    .hours-section {
+      padding: 1.5rem 0.75rem;
+    }
+
+    .container-hours {
+      padding: 0 0.75rem;
+    }
+
+    .section-title {
+      font-size: 1.4rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .hours-grid {
+      gap: 2rem;
+    }
+
+    .small-heading,
+    .small-heading-hours {
+      font-size: 0.9rem;
+    }
+
+    .small-heading-hours {
+      padding-left: 0.4rem;
+    }
+
+    .address {
+      font-size: 0.95rem;
+    }
+
+    .hours-list li {
+      font-size: 0.95rem;
+      padding: 0.6rem 0.4rem;
+    }
+  }
+</style>

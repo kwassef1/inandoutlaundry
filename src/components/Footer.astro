@@ -2,28 +2,11 @@
 /* No props needed */
 ---
 
-<footer class="footer">
+<footer id="footer">
     <div class="container footer-inner">
         <div class="footer-section">
-            <h3>In & Out Laundry</h3>
+            <h3>In & Out Wash Laundromat</h3>
             <p>Your modern laundromat in Newark, NJ</p>
-        </div>
-
-        <div class="footer-section">
-            <h4>Hours</h4>
-            <p>7:00 AM – 9:00 PM</p>
-            <p>Open Every Day</p>
-        </div>
-
-        <div class="footer-section">
-            <h4>Contact</h4>
-            <p>264 Broadway, Newark, NJ</p>
-            <p>(Entrance on side street)</p>
-            <p>(551) 326-2031</p>
-            <p>
-                <a href="mailto:info@inandoutlaundry.com"
-                    >info@inandoutlaundry.com</a>
-            </p>
         </div>
     </div>
 
@@ -36,8 +19,8 @@
 
 <style>
     /* Footer Background — matching header brightness */
-    .footer {
-        background: var(--iol-sky);
+    #footer {
+        background: var(--iol-white);
         padding: 1rem 0 0.5rem;
         border-top: 1px solid rgba(0, 0, 0, 0.05);
     }
@@ -91,7 +74,7 @@
     /* Mobile adjustments */
     /* Tablet and Medium Screens */
     @media (max-width: 968px) {
-        .footer {
+        #footer {
             padding: 1.5rem 0 0.5rem;
         }
         .footer-inner {
@@ -120,7 +103,7 @@
 
     /* Mobile Landscape and Tablet Portrait */
     @media (max-width: 800px) {
-        .footer {
+        #footer {
             padding: 1.5rem 0 0.5rem;
         }
         .footer-inner {

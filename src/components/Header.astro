@@ -2,18 +2,38 @@
 import logo from "../assets/inout.svg";
 ---
 
-<header class="header">
+<header id="header">
     <div class="container">
-        <div class="logo">
-            <img src={logo.src} alt="In & Out Laundry Logo" class="iol-logo" />
-            <a href="/">In & Out Laundry</a>
+        <div class="logo-block">
+            <div class="logo">
+                <img
+                    src={logo.src}
+                    alt="In & Out Laundry Logo"
+                    class="iol-logo"
+                />
+                <a href="/" class="business-name">In & Out Wash Laundromat</a>
+            </div>
+            <p class="slogan">Laundry made easy</p>
         </div>
+
+        <p class="header-address">
+            <a
+                href="https://maps.app.goo.gl/Ggubccb4rDwHfd9a7"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                264 Broadway Side Store, Van Wagenen St, Newark, NJ 07104
+            </a>
+        </p>
+
+        <p class="header-phone">
+            <a href="tel:+15513262031">(551) 326-2031</a>
+        </p>
 
         <nav class="nav">
             <ul>
-                <li><a href="#footer">Services</a></li>
-                <li><a href="#footer">Hours</a></li>
-                <li><a href="#footer">Contact</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#footer">About</a></li>
             </ul>
         </nav>
     </div>
@@ -21,11 +41,13 @@ import logo from "../assets/inout.svg";
 
 <style>
     /* Header Styles */
-    .header {
-        background-color: var(--iol-sky);
-        padding: 1.2rem 0.8rem 1.2rem;
-        position: relative;
+    #header {
+        background-color: var(--iol-white);
+        padding: 1.6rem 0.8rem;
         overflow: hidden;
+        top: 0;
+        z-index: 1000;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.08);
     }
 
     .container {
@@ -35,9 +57,53 @@ import logo from "../assets/inout.svg";
         display: flex;
         justify-content: space-between;
         align-items: center;
+        gap: 0.8rem;
+        flex-direction: column;
+    }
+
+    /* Address */
+    .header-address {
+        font-size: 1.3rem;
+        font-weight: 600;
+        color: var(--iol-navy);
+        opacity: 0.85;
+        text-decoration: none;
+        text-align: center;
+        margin: 0;
+    }
+
+    .header-address a {
+        color: var(--iol-navy);
+        text-decoration: none;
+    }
+    .header-address a:hover {
+        color: var(--iol-medium-blue);
+    }
+
+    /* Phone */
+    .header-phone {
+        margin: 0;
+        font-size: 1.15rem;
+        font-weight: 600;
+    }
+
+    .header-phone a {
+        color: var(--iol-navy);
+        text-decoration: none;
+    }
+
+    .header-phone a:hover {
+        color: var(--iol-medium-blue);
     }
 
     /* Logo Styles */
+
+    .logo-block {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.2rem;
+    }
     .logo {
         display: flex;
         align-items: center;
@@ -45,10 +111,11 @@ import logo from "../assets/inout.svg";
     }
 
     .logo img {
-        height: 32px;
+        height: 40px;
     }
+
     .logo a {
-        font-size: 1.7rem;
+        font-size: 3rem;
         font-weight: 800;
         font-family: var(--iol-font);
         color: var(--iol-navy);
@@ -56,7 +123,18 @@ import logo from "../assets/inout.svg";
         letter-spacing: -0.5px;
     }
 
+    /* Slogan */
+    .slogan {
+        margin: 0;
+        font-size: 1.75rem;
+        font-weight: 600;
+        color: var(--iol-medium-blue);
+        margin-top: -0.2rem;
+    }
     /* Navigation Styles */
+    .nav {
+        margin-top: 1rem;
+    }
     .nav ul {
         list-style: none;
         display: flex;
@@ -67,6 +145,7 @@ import logo from "../assets/inout.svg";
 
     .nav a {
         font-family: var(--iol-font);
+        font-size: 1.5rem;
         font-weight: 600;
         color: var(--iol-navy);
         text-decoration: none;
@@ -74,38 +153,47 @@ import logo from "../assets/inout.svg";
     }
 
     .nav a:hover {
-        color: var(--iol-white);
+        color: var(--iol-medium-blue);
     }
 
     @media (max-width: 968px) {
-        .header {
-            padding: 1rem 0.6rem;
+        #header {
+            padding: 1.2rem 0.6rem;
         }
         .container {
             padding: 0 1rem;
             gap: 0.8rem;
         }
         .logo img {
-            height: 28px;
+            height: 36px;
         }
         .logo a {
+            font-size: 2.5rem;
+        }
+
+        .slogan {
             font-size: 1.5rem;
+        }
+        .header-address a {
+            font-size: 1.2rem;
+        }
+        .header-phone a {
+            font-size: 1.1rem;
         }
         .nav ul {
             gap: 1.5rem;
         }
         .nav a {
-            font-size: 0.95rem;
+            font-size: 1.3rem;
         }
     }
 
     /* Mobile Landscape */
     @media (max-width: 800px) {
-        .header {
+        #header {
             padding: 1rem 0.5rem;
         }
         .container {
-            flex-direction: column;
             gap: 1rem;
             padding: 0 0.8rem;
         }
@@ -113,10 +201,20 @@ import logo from "../assets/inout.svg";
             gap: 0.6rem;
         }
         .logo img {
-            height: 26px;
+            height: 32px;
         }
         .logo a {
-            font-size: 1.4rem;
+            font-size: 2.2rem;
+        }
+
+        .slogan {
+            font-size: 1.3rem;
+        }
+        .header-address a {
+            font-size: 1.1rem;
+        }
+        .header-phone a {
+            font-size: 1.05rem;
         }
         .nav ul {
             gap: 1rem;
@@ -124,58 +222,123 @@ import logo from "../assets/inout.svg";
             justify-content: center;
         }
         .nav a {
-            font-size: 0.9rem;
+            font-size: 1.15rem;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .logo img {
+            height: 30px;
+        }
+
+        .logo a {
+            font-size: 2rem;
+        }
+
+        .slogan {
+            font-size: 1.2rem;
+        }
+
+        .header-address a {
+            font-size: 1.05rem;
+        }
+
+        .header-phone a {
+            font-size: 1rem;
+        }
+
+        .nav ul {
+            gap: 1.2rem;
+        }
+
+        .nav a {
+            font-size: 1.1rem;
         }
     }
 
     /* Mobile Portrait */
     @media (max-width: 480px) {
-        .header {
+        #header {
             padding: 0.8rem 0.4rem;
         }
+
         .container {
             gap: 0.8rem;
             padding: 0 0.6rem;
         }
+
         .logo {
             gap: 0.5rem;
         }
+
         .logo img {
-            height: 24px;
+            height: 26px;
         }
+
         .logo a {
-            font-size: 1.3rem;
+            font-size: 1.6rem;
             letter-spacing: -0.3px;
         }
+
+        .slogan {
+            font-size: 1rem;
+        }
+
+        .header-address a {
+            font-size: 0.95rem;
+        }
+
+        .header-phone a {
+            font-size: 0.95rem;
+        }
+
         .nav ul {
             gap: 0.8rem;
         }
+
         .nav a {
-            font-size: 0.85rem;
+            font-size: 0.95rem;
             padding: 0.3rem 0.5rem;
         }
     }
 
     /* Extra Small Screens */
     @media (max-width: 360px) {
-        .header {
+        #header {
             padding: 0.6rem 0.3rem;
         }
+
         .container {
             gap: 0.6rem;
             padding: 0 0.4rem;
         }
+
         .logo img {
             height: 22px;
         }
+
         .logo a {
-            font-size: 1.2rem;
+            font-size: 1.4rem;
         }
+
+        .slogan {
+            font-size: 0.9rem;
+        }
+
+        .header-address a {
+            font-size: 0.85rem;
+        }
+
+        .header-phone a {
+            font-size: 0.85rem;
+        }
+
         .nav ul {
             gap: 0.5rem;
         }
+
         .nav a {
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             padding: 0.2rem 0.4rem;
         }
     }
